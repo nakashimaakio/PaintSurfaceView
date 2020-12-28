@@ -68,6 +68,7 @@ class CustomSurfaceView(context: Context, surfaceView: SurfaceView) :
     private fun touchUp(x: Float, y: Float) {
         path.lineTo(x, y)
         draw()
+        // ダブルバッファリングによるちらつきの抑制
         canvas.drawPath(path, paint)
     }
 
